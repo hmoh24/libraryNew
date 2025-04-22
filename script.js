@@ -35,7 +35,7 @@ const myLibrary = [
       author: "Michael J. Sullivan",
       pages: 864,
       publishDate: "2012",
-      coverArt: "https://covers.openlibrary.org/b/isbn/9780316187709-L.jpg",
+      coverArt: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1707559940i/44777327.jpg",
       dateAdded: 1713800000300,
       review: null
     },
@@ -55,7 +55,7 @@ const myLibrary = [
       author: "Katherine Addison",
       pages: 448,
       publishDate: "2014",
-      coverArt: "https://covers.openlibrary.org/b/isbn/9780765326994-L.jpg",
+      coverArt: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1373039517i/17910048.jpg",
       dateAdded: 1713800000500,
       review: null
     }
@@ -88,15 +88,29 @@ function displayBook(book){
         if (key === 'author' || key === 'title' || key === 'pages' || key === 'publishDate'){
             console.log(key)
             let p = document.createElement('p');
+            let text;
+            if (key === 'pages'){
+                text = document.createTextNode(`p.${book[key]}`);
+            }
+            else if (key === 'author'){
+                text = document.createTextNode(`by ${book[key]}`);
+            }
+            else if (key === 'publishDate'){
+                text = document.createTextNode(`Pub. ${book[key]}`);
+
+            }
+            else {
+                text = document.createTextNode(`${book[key]}`);
+            }
             p.classList.add(key);
-            let text = document.createTextNode(`${key}`);
             p.append(text);
             card.append(p);
         }
     }
 
     const bookCover = document.createElement('div');
-    book.coverArt ? bookCover.style.background = `url(${book.coverArt})` : bookCover.style.background = 'white';
+    bookCover.classList.add('coverArt');
+    book.coverArt ? bookCover.style.backgroundImage = `url(${book.coverArt})` : bookCover.style.backgroundColor = 'green';
     card.append(bookCover)
 
     const starDiv = document.createElement('div');
