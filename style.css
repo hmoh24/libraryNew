@@ -15,7 +15,11 @@ body {
 }
 
 .top {
-    background-color: yellow;
+    background-image: url('topImage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 150px; /* Optional: controls vertical size */
     grid-area: 1 / 2 / 2/ 4;
 }
 
@@ -97,6 +101,15 @@ main img {
     max-height: 100%;
     object-fit: contain;
     display: block;
+}
+
+dialog {
+    height: 50vh;
+    width: 25vw;
+}
+
+::backdrop {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 

@@ -134,3 +134,14 @@ myLibrary.forEach(book => {
 
 //add sort by title (a-z), (z-a), pages, dateAdded, review
 
+const addBooksButton = document.querySelector('.addBooks');
+const closeDialog = document.querySelector('.close');
+const dialog = document.querySelector('dialog');
+
+addBooksButton.addEventListener('click', () => {
+  dialog.showModal();
+})
+
+closeDialog.addEventListener('click', () => {
+  dialog.close();
+})
