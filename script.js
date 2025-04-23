@@ -108,10 +108,13 @@ function displayBook(book){
         }
     }
 
-    const bookCover = document.createElement('div');
-    bookCover.classList.add('coverArt');
-    book.coverArt ? bookCover.style.backgroundImage = `url(${book.coverArt})` : bookCover.style.backgroundColor = 'green';
-    card.append(bookCover)
+    const bookCoverContainer = document.createElement('div');
+    bookCoverContainer.classList.add('coverArtContainer');
+    const bookCover = document.createElement('img');
+    bookCover.classList.add('coverArt')
+    book.coverArt ? bookCover.src = book.coverArt : bookCover.style.backgroundColor = 'green';
+    card.append(bookCoverContainer);
+    bookCoverContainer.append(bookCover)
 
     const starDiv = document.createElement('div');
     let star = document.createElement('span');
