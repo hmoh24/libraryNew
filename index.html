@@ -16,14 +16,33 @@
     </main>
     <section class="right">
         <button class="addBooks">Add Books</button>
-        <button class="removeBooks">Remove Books</button>
     </section>
     <dialog>
         <button class="close">X</button>
         <form>
             <h1>Add a New Book</h1>
-            <input type="hidden" name="id">
-            <input type="text" name="title" id="">
+            <ul>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+            </ul>
+            <ul>
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+            </ul>
+            <ul>
+                <label for="pages">Pages</label>
+                <input type="number" name="pages" id="pages">
+            </ul>
+            <ul>
+                <label for="publishDate">Publish Date</label>
+                <input type="number" name="publishDate" id="publishDate">
+            </ul>
+            <ul>
+                <label for="coverArt">Cover Art</label>
+                <input type="text" name="coverArt" id="coverArt">
+            </ul>
+            <button class="submit" type="submit">Submit</button>
+
         </form>
     </dialog>
 </body>
